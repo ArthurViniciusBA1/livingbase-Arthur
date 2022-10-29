@@ -1,1 +1,115 @@
-/* Desenvolva seu estilo aqui */
+@import url(../../styles/globalStyles.css);
+
+main{
+    margin: 75px auto 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 440px;
+    width: 100%;
+
+    margin-bottom: 74px;
+}
+
+header>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 69px;
+
+    height: 100%;
+}
+
+header>div>img{
+    width: 128px;
+}
+
+header>div>div{
+    width: 80%;
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+header>div>div>h2>span{
+    color: var(--color-brand-1);
+}
+
+#listaCategorias{
+    display: flex;
+    padding: 28px 10px;
+
+    gap: 20px;
+
+    overflow-x: auto;
+}
+
+.listaPosts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 93px;
+
+    list-style: none;
+
+    margin-top: 46px;
+
+    margin-bottom: 93px;
+}
+
+.listaPosts>li{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    width: 48%;
+
+    overflow: hidden;
+}
+
+.listaPosts>li>img{
+    height: 175px;
+    width: 100%;
+}
+
+.listaPosts>li>div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    align-items: flex-start;
+}
+
+.listaPosts>li>div>h3{
+    display: flex;
+    align-items: center;
+
+    height: 150px;
+}
+
+.listaPosts>li>div>p{
+    margin-bottom: 12px;
+}
+
+.observer{
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 93px;
+}
+
+.observer>img{
+    width: 48%;
+}

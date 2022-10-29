@@ -1,0 +1,49 @@
+.font1-semibold {
+  font-weight: 600;
+  font-size: var(--font-size-1);
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-decoration: none;
+
+  color: var(--color-grey-1);
+}
+
+.font2-bold {
+  font-weight: 700;
+  font-size: var(--font-size-2);
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-decoration: none;
+
+  color: var(--color-grey-1);
+}
+
+.font3-semibold {
+  font-weight: 600;
+  font-size: var(--font-size-3);
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-decoration: none;
+
+  color: var(--color-grey-1);
+}
+
+.font4-semibold {
+  font-weight: 600;
+  font-size: var(--font-size-4);
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-decoration: none;
+
+  color: var(--color-grey-1);
+}
+
+.font4-regular {
+  font-weight: 400;
+  font-size: var(--font-size-4);
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-decoration: none;
+
+  color: var(--color-grey-3);
+}

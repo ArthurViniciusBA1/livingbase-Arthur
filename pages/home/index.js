@@ -1,6 +1,11 @@
 import { getNews, getPostByID } from "../../scripts/requests.js";
 
+let counter = 0
+
 gerarFiltros()
+receberPosts(counter)
+scrollTop()
+observer()
 
 function gerarFiltros() {
 
@@ -31,7 +36,7 @@ function gerarFiltros() {
         if (categoria === "Todos") {
             input.checked = "true"
             label.addEventListener("click", (event) => {
-                receberPosts(0, 0, event.target.id)
+                location.reload()
             })
         } else {
             label.addEventListener("click", (event) => {
@@ -50,8 +55,6 @@ function gerarFiltros() {
     }
 }
 
-
-
 async function receberPosts(startPage, endPage = startPage, filtro = "Todos") {
 
     let posts = []
@@ -59,8 +62,6 @@ async function receberPosts(startPage, endPage = startPage, filtro = "Todos") {
     for (let i = startPage; i <= endPage; i++) {
         posts = posts.concat(await (getNews(i)))
     }
-
-
 
     if (filtro != "Todos") {
         posts = posts.filter(element => element != undefined && element.category === filtro)
@@ -103,7 +104,7 @@ async function carregarPosts(posts) {
         button.addEventListener("click", (event) => {
             localStorage.setItem("@post", JSON.stringify(event.target.dataset.postId))
 
-            // window.location.href = "../post/index.html"
+            window.location.href = "../post/index.html"
         })
 
         div.append(h3, p, button)
@@ -114,4 +115,27 @@ async function carregarPosts(posts) {
     }
 }
 
-receberPosts(0)
+function observer() {
+    const observerSection = document.querySelector(".observer")
+
+    observer = new IntersectionObserver((entries) => {
+        counter++
+        if (counter <= 2) {
+            receberPosts(0, counter)
+        } else {
+            observerSection.remove()
+        }
+    })
+
+    
+
+    observer.observe(observerSection)
+}
+
+function scrollTop() {
+    let botao = document.querySelector("#topo")
+
+    botao.addEventListener("click", (event) => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    })
+}
